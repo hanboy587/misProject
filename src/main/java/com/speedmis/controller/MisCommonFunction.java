@@ -178,14 +178,14 @@ public class MisCommonFunction {
 		return onlyOnereturnSql($sql);
 	}
 	
-	public String is_date(String $str) {
-		String H;
-		String.format(1,1);
-		H = """
+	// public String is_date(String $str) {
+	// 	String H;
+	// 	String.format(1,1);
+	// 	H = """
 				
-				""";
-		return "";
-	}
+	// 			""";
+	// 	return "";
+	// }
 
 	// function is_date( $str ) {
 	// 	$d = date('Y-m-d', strtotime( $str ));
