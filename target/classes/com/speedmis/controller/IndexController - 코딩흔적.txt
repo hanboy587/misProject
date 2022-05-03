@@ -1,0 +1,233 @@
+package com.speedmis.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import java.io.PrintWriter;
+//import java.io.File;
+import com.speedmis.controller.MisCommonFunction;
+import com.speedmis.controller.list_inc;
+import com.speedmis.controller.view_inc;
+import com.speedmis.addLogic.blankLogic;
+import com.speedmis.addLogic.speedmis000314;
+
+import java.lang.reflect.*;
+
+public class IndexController implements Controller {
+
+	
+	public static String $myname = "미정";
+	public static String $gubun = "";
+	public static String $RealPid = "";
+	public static String $idx = "";
+	public static String $list_word = "";
+	public static String $view_word = "";
+	public static String $gzip_YN = "";
+	
+
+
+	
+	public void requestHandler(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+
+        response.setContentType("text/html");
+        response.setCharacterEncoding("utf-8");
+        MisCommonFunction misFunc=new MisCommonFunction();
+        misFunc.init(request, response);
+        $gzip_YN = misFunc.$gzip_YN;
+        
+        
+		PrintWriter writer = response.getWriter();
+		
+		
+		
+		String lines = "index.php 의 1번째 라인.<br>MisCommonFunction.php 시작<br>MisCommonFunction.php 끝<br>		           ";
+        writer.println(lines);
+        
+
+        $gubun = misFunc.requestVB(request, response, "gubun");
+        
+        
+        
+        $idx = misFunc.requestVB(request, response, "idx");
+        
+        $list_word = "list_abcDEF";
+        $view_word = "view_abcDEF";
+        
+        
+        
+        if($gubun == "") {
+        	writer.println("gubun 값이 없으면 안됩니다.<br>");
+        	writer.println("<a href='index.php?gubun=314'>gubun=314 목록가기</a>");
+        	
+        }
+        
+        
+        //$list_word = realLogic.lcase2($list_word);
+        
+        //speedmis000314 realLogic=new speedmis000314();
+        //Class realLogic = Class.forName("com.speedmis.addLogic.speedmis000314");
+        //com.speedmis.addLogic.speedmis000314 realLogic=new com.speedmis.addLogic.speedmis000314();
+        //com.speedmis.addLogic.speedmis000314 realLogic=new com.speedmis.addLogic.speedmis000314();
+        
+        if($gubun.equals("314")) {
+        	$RealPid = "speedmis000314";
+        	//과제 : 현재 if 에 따른 realLogic 여러번 정의하면 에러...
+    		//com.speedmis.addLogic.speedmis000314 realLogic=new com.speedmis.addLogic.speedmis000314();
+        } else if($gubun.equals("36")) {
+        	$RealPid = "speedmis000036";
+    		//com.speedmis.addLogic.speedmis000036 realLogic=new com.speedmis.addLogic.speedmis000036();
+        } else {
+    		//com.speedmis.addLogic.blankLogic realLogic=new com.speedmis.addLogic.blankLogic();
+        }
+        
+        
+        try {
+        
+        	
+        	
+        	//Class<?> clazz = Class.forName("com.speedmis.addLogic.speedmis000314");
+            //Object dog = clazz.newInstance(); // invoke empty constructor
+            //Method setNameMethod = dog.getClass().getMethod("init");
+            //setNameMethod.invoke(dog, "Mishka"); // pass arg
+            
+            
+        	Class<?> clazz = Class.forName("com.speedmis.addLogic.speedmis000314");
+        	//Method method = (Method) clazz.getConstructor().newInstance();
+        	//Constructor<?> ctor = clazz.getConstructor();
+        	Object object = clazz.newInstance();
+        	//clazz.getMethod("init", null).invoke(object);
+        	Method method = object.getClass().getMethod("ttt");
+        	
+        	clazz.getMethod("ttt").invoke(object);
+        	
+        	
+        	//Constructor<?> ctor = clazz.getConstructor().newInstance();
+	        //Constructor<?> ctor = clazz.getConstructor();
+	        //Object object = ctor.newInstance();
+	        //clazz.getMethod("init").invoke(object);
+	        //Method method = clazz.getMethod("init");
+	        //Method method = (Method) object.getMethod("init");
+	        //method.init();
+        
+        		
+        	//Method method = (Method) Class.forName("com.speedmis.addLogic.speedmis000314").getConstructor().newInstance().getMethod("init");
+        //method.in
+        
+        	
+        
+        //com.speedmis.addLogic.blankLogic listClass = Class.forName("com.speedmis.addLogic.speedmis000314").getConstructors().newInstance();
+       // Constructor<?>[] constructors = listClass.getConstructors();
+        
+        	//if($RealPid!="")
+			
+			//Class<?> listClass = Class.forName("com.speedmis.addLogic.speedmis000314");
+			//Method[] methods = listClass.getDeclaredMethods();
+			
+			//Constructor<?> constructor = listClass.getConstructor(blankLogic.class);
+			//Object extensions = constructor.newInstance();
+			
+			//ClassLoader loader=blankLogic.getClass().getClassLoader();
+			//Class clazz = loader.loadClass("com.speedmis.addLogic.speedmis000314");
+			//Class realLogic = listClass.getDeclaredConstructor().newInstance();
+			
+        	
+
+        	//getDeclaredConstructor().
+        	//Class<?> clazz = Class.forName("com.foo.MyClass");
+        	//Constructor<?> constructor = listClass.getConstructor();
+        	//Constructor<?> constructor = listClass.getDeclaredConstructor();
+        	//Object realLogic = constructor.newInstance();
+        	
+        	//realLogic.init(request, response);
+        	
+        	
+        	
+        	//speedmis000314 realLogic=new speedmis000314();
+			//blankLogic realLogic = (blankLogic) Class.forName("com.speedmis.addLogic.blankLogic").getConstructor().newInstance();
+	        //blankLogic realLogic = (blankLogic) Class.forName("blankLogic").getDeclaredConstructor().newInstance();
+	        
+			//blankLogic realLogic = new com.speedmis.addLogic.blankLogic();
+	        
+        	/*
+        	realLogic.init(request, response);
+	        
+	        
+        	Method[] methods = realLogic.getClass().getDeclaredMethods();
+			
+			for(Method m : methods) {
+				System.out.println("method: " + m.getName());			// 메소드 이름
+				System.out.println("class: " + m.getDeclaringClass());	// 클래스 이름
+				System.out.println("Return: " + m.getReturnType());		// 메소드의 리턴 타입
+				
+				// List 인터페이스의 메소드들의 파라미터
+				Parameter[] paramList = m.getParameters();
+				for(Parameter p : paramList) {
+					System.out.println("type: " + p.getType());	// 각 메소드별 파라미터 타입
+					System.out.println("name: " + p.getName());	// 각 메소드별 파라미터 이름
+					
+				}
+
+			
+				System.out.println();
+				
+			}
+			*/
+        	System.out.println("OOOOOKKKKKKKKKK");
+			
+        } catch (Exception e) {
+        	System.out.println("NNNNNNNNNNNNOOOOOOOOOOOOOOOOOOOOOOOO");
+        }
+		
+		
+        
+        
+        
+		//realLogic.init(request, response);
+
+		writer.println("<br><br>초기 list_word 는 " + $list_word + " 입니다.<br><br>");
+		writer.println("초기 view_word 는 " + $view_word + " 입니다.<br><br>");
+		
+		if($idx!="") {
+			view_inc viewInc=new view_inc();
+			viewInc.main(request, response);
+		} else {
+			list_inc listInc=new list_inc();
+			listInc.main(request, response);
+		}
+		
+		
+        //realLogic.list_change_word(request, response);
+		
+		writer.println("나의 이름은 " + $myname + " 입니다.<br><br>");
+		writer.println("gzip_YN = " + $gzip_YN + " 입니다.<br>");
+		//java.io.File file = new java.io.File($fname);
+
+		/*
+        File dir = new File("./");
+        $fname = dir.getAbsolutePath();
+
+        
+		//if(file_exists($fname)==1) {
+		//    include $fname;
+		//}
+
+        writer.println("$RealPid="+$RealPid);
+        writer.println("$fname="+$fname);
+        
+        
+        //writer.println("Working Directqssssory = " + path);
+        
+        writer.println(misFunc.ucase("jjjKKKlllLL"));
+        */
+		return "index";	
+	}
+ 
+
+}
+
+
